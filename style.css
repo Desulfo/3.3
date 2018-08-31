@@ -1,0 +1,341 @@
+/*czcionka*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic);
+/*ikony*/
+@import url(https://use.fontawesome.com/releases/v5.0.8/css/all.css);
+
+
+* {
+	box-sizing: border-box;
+}
+body {	
+	margin: 0 auto; /*potrzebne żeby menu nie bylo za daleko od loga?*/
+	width: 100%;
+	font-family: "open sans", sans-serif;
+}
+.clearfi::before,
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+[class*="col-"] {
+	float: left;
+	height: 100%;
+	/*position: relative;*/
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+.col-margin-0 {margin-left: 0;}
+.col-margin-1 {margin-left: 8.33%;}
+.col-margin-j {margin-left: 12.5%;}
+.col-margin-2 {margin-left: 16.66%;}
+.col-margin-3 {margin-left: 25%;}
+.col-margin-4 {margin-left: 33.33%;}
+.col-margin-5 {margin-left: 41.66%}
+.col-margin-6 {margin-left: 50%;}
+.col-margin-7 {margin-left: 58.33%;}
+.col-margin-8 {margin-left: 66.66%;}
+.col-margin-9 {margin-left: 75%;}
+.col-margin-10 {margin-left: 83.33%;}
+.col-margin-11 {margin-left: 91.66%;}
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+header {
+	background-color: #313234;
+	height: 50px;
+	margin: 0;
+	padding: 0;
+}
+header nav img {
+	margin: 10px 30px;
+}
+header nav ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	float: right;
+}
+header nav li {
+	display: inline-block;
+	text-align: center;
+	line-height: 50px;
+}
+a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: white;
+	margin: 0 5px;
+	font-weight: bold;
+}
+header nav ul li:hover {
+	background: rgba(0, 0, 0, 0.5);
+}
+header nav ul li:hover a {
+	color: #2EBBE6;	
+}
+
+
+/*  HERO  */
+
+
+.hero {
+	width: 100%;
+	height: 300px;
+	background: url(https://images.unsplash.com/photo-1445620466293-d6316372ab59?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ca4f0bb0565191e29026044ebb49925a&auto=format&fit=crop&w=1934&q=80);
+	background-size: 100%;
+}
+.title {	
+	color: white;
+	float: right;
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 10px 30px;
+	text-align: center;
+	margin-top: 70px; /*jakiś inny sposób żeby wyśrodkować w pionie?*/
+}
+
+/*  KORZYSCI  */
+
+.korzysci {
+	width: 100%;
+	text-align: center;
+	/*background: orange;*/
+	padding-bottom: 40px;
+}
+
+.korzysci div:not(.text) {
+	height: 100%;
+	text-align: center;
+	padding-top: 50px;
+}
+.text>i {
+	font-size: 40px;
+}
+.korzysci div:nth-of-type(2){
+	color: blue;
+}
+
+/*  FEATURED WORKS  */
+
+.text h4, .text p {
+	margin: 5px;
+	padding: 0;
+}
+.text p {
+	font-size: 12px;
+	color: black;
+}
+.korzysci h2 {
+	font-size: 30px;
+	margin-top: 0;
+	margin-bottom: 8px;
+}
+.korzysci p { 
+	margin: auto 50px;
+	text-align: justify;
+	text-align-last: center;
+}
+
+/*  GALERIA  */
+
+/* wypadałoby, żeby layer był wielkości obrazka [obrazek-position:absolute(co się wtedy stanie z .layer?] i po prostu przyjeżdżał z góry a ikony były w nim wyśrodkowane. HAVE FUN!*/
+.jk {
+	position: relative;
+}
+.layer {
+	z-index: 1;
+	opacity:0;
+	background: 
+	margin: 0;
+	padding: 0;
+	word-spacing: 15px;
+	font-size: 10px;
+	/*display: none ;	*/
+	position: absolute;
+	left: 35%;
+	top: 50%;
+	transition: 1.5s;
+}
+.col-4 .layer {
+	left: 40%;
+}
+.layer i {	
+	padding: 4px;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	background-color: #B0BDC2;
+	border-radius: 5px;
+}
+/*.border {
+	
+	width: 20px;
+	height: 20px;
+	background-color: grey;
+	border-radius: 5px;
+	
+}*/
+.gallery {
+	width: 100%;
+	height: 150px;
+}
+.gallery img {
+	/*position: absolute;*/
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	transition: .7s;	
+}
+.gallery [class*="col-"]:hover img{
+	opacity: 0.7;
+	cursor: pointer;
+}
+.gallery [class*="col-"]:hover .layer {
+	opacity: 1;
+	cursor: pointer;
+}
+
+/*  ZESPOL  */	
+
+.zespol {
+	margin-top: 50px;
+	width: 100%;
+	height: 220px;
+}
+/*.zespol .col-3{	padding: 10px 2%;}*/
+.stanowisko {
+	margin: 10px auto;
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	background: radial-gradient(circle, white 5px, grey 5px);
+	background: -webkit-radial-gradient(circle, white 5px, grey 5px);
+	background-size: 10px;
+	border: 1px solid grey;
+	transition: 1s;
+}
+
+.stanowisko:hover {
+	opacity: .5;
+}
+.zespol p {
+	font-weight: bold;
+	text-align: center;
+}
+
+/*  SEKCJA ZE ZDJECIEM  */
+
+.photo {
+	height: 300px;
+	width: 100%;
+	background: radial-gradient(circle, white 5px, grey 5px);
+	background: -webkit-radial-gradient(circle, white 5px, grey 5px);
+	background-size: 10px;
+	/*background: repeating-conic-gradient(black 0deg 25%, white 0deg 50%);
+	background: -webkit-repeating-conic-gradient(black 0deg 25%, white 0deg 50%);
+	background-size: 60px 60px;
+	https://www.w3.org/TR/css-images-4/  */
+	padding-top: 100px;
+}
+.photo col-3 {
+	
+}
+.photo img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+.photo .col-6 {
+	text-align: center;
+}
+.photo h2 {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.photo p {
+	margin: auto 20px;
+	text-align: justify;
+	text-align-last: center;
+} /* na wzorcu wewnątrz .col-6 są dwa .col z tekstem??*/
+
+/*  STATYSTYKI  */
+
+.numbers {
+	height: 100px;
+	width: 100%;
+	text-align: center;
+}
+.numbers h3 {
+	margin-top: 25px;
+	margin-bottom: 0;
+	font-size: 40px;
+	font-weight: 900;
+}
+.numbers p {
+	margin-top: 5px;
+	color: #2EBBE6;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+/*  KONTAKTY  */
+
+.contact {
+	margin-top: 20px;
+	width: 100%;
+	height: 220px;
+	overflow: hidden;
+}
+.contact h2 {
+	text-transform: uppercase;
+}
+.contact p {
+	/*font-size: 10px;*/
+	text-align: left;
+}
+.contact [class*="col-"] {
+	padding-left: 15px;
+}
+.contact td {
+	/*font-size: 10px;*/
+}
+.contact td:first-child {
+	vertical-align: top;
+	font-weight: bold;
+}
+.contact td:last-child {
+	padding-left: 5px;
+}
+
+/*  STOPKA  */
+
+footer {
+	padding: 15px;
+	width: 100%;
+	/*float:left;*/
+	height: 50px;
+	background: #313234;
+	color: white;
+	text-align: center;
+	margin: 0 auto;
+}
+footer p {
+	margin: 0;
+}
+
+
+
+
+
