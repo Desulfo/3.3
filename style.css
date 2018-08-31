@@ -54,9 +54,9 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 }
+/* header */
 header {
 	background-color: #313234;
-	height: 50px;
 	margin: 0;
 	padding: 0;
 }
@@ -68,6 +68,8 @@ header nav ul {
 	padding: 0;
 	list-style-type: none;
 	float: right;
+	/*margin-bottom: 0;
+	padding-bottom: 0; jak zorbić brak marginesu na dole? */
 }
 header nav li {
 	display: inline-block;
@@ -83,6 +85,7 @@ a {
 }
 header nav ul li:hover {
 	background: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
 }
 header nav ul li:hover a {
 	color: #2EBBE6;	
@@ -95,7 +98,7 @@ header nav ul li:hover a {
 .hero {
 	width: 100%;
 	height: 300px;
-	background: url(https://images.unsplash.com/photo-1445620466293-d6316372ab59?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ca4f0bb0565191e29026044ebb49925a&auto=format&fit=crop&w=1934&q=80);
+	background: url(https://images.unsplash.com/photo-1445620466293-d6316372ab59?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ca4f0bb0565191e29026044ebb49925a&auto=format&fit=crop&w=1934&q=80) no-repeat;
 	background-size: 100%;
 }
 .title {	
@@ -104,7 +107,7 @@ header nav ul li:hover a {
 	background-color: rgba(0, 0, 0, 0.5);
 	padding: 10px 30px;
 	text-align: center;
-	margin-top: 70px; /*jakiś inny sposób żeby wyśrodkować w pionie?*/
+	margin-top: 70px; 
 }
 
 /*  KORZYSCI  */
@@ -119,7 +122,7 @@ header nav ul li:hover a {
 .korzysci div:not(.text) {
 	height: 100%;
 	text-align: center;
-	padding-top: 50px;
+	padding-top: 20px;
 }
 .text>i {
 	font-size: 40px;
@@ -151,7 +154,6 @@ header nav ul li:hover a {
 
 /*  GALERIA  */
 
-/* wypadałoby, żeby layer był wielkości obrazka [obrazek-position:absolute(co się wtedy stanie z .layer?] i po prostu przyjeżdżał z góry a ikony były w nim wyśrodkowane. HAVE FUN!*/
 .jk {
 	position: relative;
 }
@@ -201,7 +203,6 @@ header nav ul li:hover a {
 }
 .gallery [class*="col-"]:hover img{
 	opacity: 0.7;
-	cursor: pointer;
 }
 .gallery [class*="col-"]:hover .layer {
 	opacity: 1;
@@ -239,12 +240,11 @@ header nav ul li:hover a {
 /*  SEKCJA ZE ZDJECIEM  */
 
 .photo {
-	height: 300px;
 	width: 100%;
-	background: radial-gradient(circle, white 5px, grey 5px);
+	/*background: radial-gradient(circle, white 5px, grey 5px);
 	background: -webkit-radial-gradient(circle, white 5px, grey 5px);
 	background-size: 10px;
-	/*background: repeating-conic-gradient(black 0deg 25%, white 0deg 50%);
+	background: repeating-conic-gradient(black 0deg 25%, white 0deg 50%);
 	background: -webkit-repeating-conic-gradient(black 0deg 25%, white 0deg 50%);
 	background-size: 60px 60px;
 	https://www.w3.org/TR/css-images-4/  */
@@ -274,7 +274,8 @@ header nav ul li:hover a {
 /*  STATYSTYKI  */
 
 .numbers {
-	height: 100px;
+	display:inline-block;
+	float: left;
 	width: 100%;
 	text-align: center;
 }
@@ -294,8 +295,8 @@ header nav ul li:hover a {
 
 .contact {
 	margin-top: 20px;
+	margin-bottom: 20px;
 	width: 100%;
-	height: 220px;
 	overflow: hidden;
 }
 .contact h2 {
@@ -334,8 +335,51 @@ footer {
 footer p {
 	margin: 0;
 }
-
-
-
+/* media */
+@media (max-width: 768px) {
+	.col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+    nav {
+    	text-align: center;
+    }
+	header nav img {
+	margin-top: 10px;
+	/*margin-bottom; 0;
+	padding-bottom: 0; jak zrobić, żeby było bliżej przycisków? -.-*/
+	}
+	header nav ul {
+	float: none;
+	/*margin-top: 0;*/
+	}
+	header nav li {
+	display: inline-block;
+	width: 33.33%; /*dlaczego z col-s-4 się nie udało*/
+	float: left;
+	/*margin-top: 0;
+	padding-top: 0;*/
+	}
+	.col-margin-j {
+		margin-left: auto;
+	}
+	.korzysci [class*="col-"] {
+		margin-top: 20px;
+	}
+	.layer {
+		opacity: 1;
+	} /*co się stanie z :hover na telefonie? Czy da się to usunąć? */
+	.col-margin-2 {
+		margin-left: auto;
+	}
+}
 
 
