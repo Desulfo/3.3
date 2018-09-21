@@ -21,7 +21,6 @@ body {
 [class*="col-"] {
 	float: left;
 	height: 100%;
-	/*position: relative;*/
 }
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
@@ -74,7 +73,7 @@ header nav ul {
 header nav li {
 	display: inline-block;
 	text-align: center;
-	line-height: 50px;
+	line-height: 75px;
 }
 a {
 	text-decoration: none;
@@ -160,7 +159,6 @@ header nav ul li:hover a {
 .layer {
 	z-index: 1;
 	opacity:0;
-	background: 
 	margin: 0;
 	padding: 0;
 	word-spacing: 15px;
@@ -238,7 +236,9 @@ header nav ul li:hover a {
 }
 
 /*  SEKCJA ZE ZDJECIEM  */
+.photo_section{
 
+}
 .photo {
 	width: 100%;
 	/*background: radial-gradient(circle, white 5px, grey 5px);
@@ -248,9 +248,8 @@ header nav ul li:hover a {
 	background: -webkit-repeating-conic-gradient(black 0deg 25%, white 0deg 50%);
 	background-size: 60px 60px;
 	https://www.w3.org/TR/css-images-4/  */
-	padding-top: 100px;
 }
-.photo col-3 {
+.photo .col-3 {
 	
 }
 .photo img {
@@ -274,7 +273,7 @@ header nav ul li:hover a {
 /*  STATYSTYKI  */
 
 .numbers {
-	display:inline-block;
+	/*display:inline-block;*/
 	float: left;
 	width: 100%;
 	text-align: center;
@@ -294,10 +293,8 @@ header nav ul li:hover a {
 /*  KONTAKTY  */
 
 .contact {
-	margin-top: 20px;
 	margin-bottom: 20px;
 	width: 100%;
-	overflow: hidden;
 }
 .contact h2 {
 	text-transform: uppercase;
@@ -325,7 +322,7 @@ header nav ul li:hover a {
 footer {
 	padding: 15px;
 	width: 100%;
-	/*float:left;*/
+	float:left;
 	height: 50px;
 	background: #313234;
 	color: white;
@@ -362,7 +359,7 @@ footer p {
 	/*margin-top: 0;*/
 	}
 	header nav li {
-	display: inline-block;
+	/*display: inline-block;*/
 	width: 33.33%; /*dlaczego z col-s-4 się nie udało*/
 	float: left;
 	/*margin-top: 0;
