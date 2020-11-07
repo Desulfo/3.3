@@ -1,4 +1,4 @@
-#3.3
+# 3.3
 
 One of the first project from Kodilla's bootcamp. Practicing RWD.
 
